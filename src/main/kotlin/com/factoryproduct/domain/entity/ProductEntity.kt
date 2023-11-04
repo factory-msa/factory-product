@@ -5,8 +5,6 @@ import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.EnumType
 import javax.persistence.Enumerated
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.Table
 
@@ -16,15 +14,17 @@ class ProductEntity(
 
     @Id
     @Column(name = "PRODUCT_ID", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
+    val id: String,
 
     @Column(name = "PRODUCT_NAME", nullable = false)
-    var productName: String,
+    val productName: String,
 
     @Enumerated(value = EnumType.STRING)
     @Column(name = "PRODUCT_CODE", nullable = false)
-    var productCode: ProductCode,
+    val productCode: ProductCode,
+
+    @Column(name = "PRICE", nullable = false)
+    val price: Long
 
 ) : BaseTimeEntity() {
 
