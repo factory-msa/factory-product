@@ -33,6 +33,8 @@ repositories {
 extra["springCloudVersion"] = "2021.0.8"
 
 dependencies {
+    runtimeOnly("com.mysql:mysql-connector-j")
+
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-web")
