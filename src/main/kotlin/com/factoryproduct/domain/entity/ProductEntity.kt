@@ -9,7 +9,7 @@ import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
-@Table(name = "FACTORY_PRODUCT")
+@Table(name = "PRODUCT")
 class ProductEntity(
 
     @Id
@@ -28,4 +28,7 @@ class ProductEntity(
 
 ) : BaseTimeEntity() {
 
+    override fun toString(): String {
+        return "ProductEntity(id='$id', productName='$productName', productCode=$productCode, price=$price)"
+    }
 }
