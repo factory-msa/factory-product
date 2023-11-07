@@ -15,15 +15,16 @@ class ProductSearchService(
         val product = repository.findByIdOrNull(productId)
             ?: throw ProductNotFoundException(productId + "에 해당하는 상품을 찾을 수 없습니다.")
 
+        println(product)
+
         return Response(product)
     }
 
-
-    class Response(
-        private val id: String,
-        private val productName: String,
-        private val productCode: String,
-        private val price: Long
+    data class Response(
+        val id: String,
+        val productName: String,
+        val productCode: String,
+        val price: Long
     ) {
         constructor(product: ProductEntity) : this(
             product.id,
@@ -31,6 +32,5 @@ class ProductSearchService(
             product.productCode.codeName,
             product.price
         )
-
     }
 }
