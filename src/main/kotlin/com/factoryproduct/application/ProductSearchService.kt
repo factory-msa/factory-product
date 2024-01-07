@@ -15,8 +15,6 @@ class ProductSearchService(
         val product = repository.findByIdOrNull(productId)
             ?: throw ProductNotFoundException(productId + "에 해당하는 상품을 찾을 수 없습니다.")
 
-        println(product)
-
         return Response(product)
     }
 

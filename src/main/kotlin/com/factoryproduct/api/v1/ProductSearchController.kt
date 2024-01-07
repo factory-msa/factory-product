@@ -22,5 +22,4 @@ class ProductSearchController(
             service.findProduct(productId)
         )
     }
-
 }
